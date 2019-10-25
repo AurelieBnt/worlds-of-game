@@ -3,4 +3,4 @@ node_modules
 platforms
 plugins
 package-lock.json
-always-data.json
+config
