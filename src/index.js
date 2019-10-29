@@ -92,12 +92,18 @@ for(const key in attribute){
 }
 */
 
-const user = {
-    login : "",
-    password : ""
-};
+import {User} from "./shared/models/user.model";
 
-const setAttribute = (elem, json) =>{
+const newUser = new User("test@test.com", "licorne","Bisounours");
+
+console.log(newUser);
+
+// const user = {
+//     login : "",
+//     password : ""
+// };
+
+const setAttribute = (elem, json) => {
     for(const key in json){
         elem.setAttribute(key, json[key])
     }
@@ -106,7 +112,7 @@ const setAttribute = (elem, json) =>{
 const div1 = document.createElement("div");
 setAttribute(div1, {class : "div1"});
 
-const displayTitle = () =>{
+const displayTitle = () => {
     const div2 = document.createElement("div");
     const titleElement = document.createElement("h1");
     const textNode = document.createTextNode("Worlds of Game");
@@ -123,7 +129,7 @@ const displayTitle = () =>{
     div1.appendChild(div2);
 };
 
-const displayLoginForm = () =>{
+const displayLoginForm = () => {
     let valid = false;
     const form = document.createElement("form");
     const divFormLogin = document.createElement("div");
@@ -140,12 +146,12 @@ const displayLoginForm = () =>{
         class :"form"
     });
     setAttribute(loginInput, {
-        value : user.login,
+        value : newUser.email,
         placeholder : "email",
         type : "mail",
     });
     setAttribute(passwordInput, {
-        value : user.password,
+        value : newUser.password,
         placeholder : "password"
     });
     setAttribute(goButton, {type : "submit"});
@@ -161,7 +167,7 @@ const displayLoginForm = () =>{
     div1.appendChild(form);
 };
 
-const displayRegisterButton = () =>{
+const displayRegisterButton = () => {
     const registerButton = document.createElement("button");
     const registerButtonText = document.createTextNode("Register");
     const registerButtonLink = document.createElement("a");
@@ -172,7 +178,7 @@ const displayRegisterButton = () =>{
     div1.appendChild(registerButtonLink);
 };
 
-const displayLogin = () =>{
+const displayLogin = () => {
     displayTitle();
     displayLoginForm();
     displayRegisterButton();
