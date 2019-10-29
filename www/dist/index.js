@@ -98,6 +98,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sha
 
 /***/ }),
 
+/***/ "./src/shared/models/user-adress.model.js":
+/*!************************************************!*\
+  !*** ./src/shared/models/user-adress.model.js ***!
+  \************************************************/
+/*! exports provided: UserAdress */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UserAdress\", function() { return UserAdress; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar UserAdress = function UserAdress(phone, adress, city, zipCode) {\n  _classCallCheck(this, UserAdress);\n\n  this.phone = phone;\n  this.adress = adress;\n  this.city = city;\n  this.zipcode = zipCode;\n};\n\n//# sourceURL=webpack:///./src/shared/models/user-adress.model.js?");
+
+/***/ }),
+
+/***/ "./src/shared/models/user-informations.model.js":
+/*!******************************************************!*\
+  !*** ./src/shared/models/user-informations.model.js ***!
+  \******************************************************/
+/*! exports provided: UserInformations */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UserInformations\", function() { return UserInformations; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar UserInformations = function UserInformations(gender, firstName, lastName) {\n  _classCallCheck(this, UserInformations);\n\n  this.gender = gender;\n  this.firstName = firstName;\n  this.lastName = lastName;\n};\n\n//# sourceURL=webpack:///./src/shared/models/user-informations.model.js?");
+
+/***/ }),
+
 /***/ "./src/shared/models/user.model.js":
 /*!*****************************************!*\
   !*** ./src/shared/models/user.model.js ***!
@@ -106,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sha
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"User\", function() { return User; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar User = function User(email, password, surname) {\n  _classCallCheck(this, User);\n\n  this.email = email;\n  this.password = password;\n  this.surname = surname;\n};\n\n//# sourceURL=webpack:///./src/shared/models/user.model.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"User\", function() { return User; });\n/* harmony import */ var _user_adress_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-adress.model */ \"./src/shared/models/user-adress.model.js\");\n/* harmony import */ var _user_informations_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user-informations.model */ \"./src/shared/models/user-informations.model.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n\n\nvar User = function User(email, password, surname) {\n  _classCallCheck(this, User);\n\n  this.email = email;\n  this.password = password;\n  this.surname = surname;\n  this.userAdress = new _user_adress_model__WEBPACK_IMPORTED_MODULE_0__[\"UserAdress\"]();\n  this.userInformations = new _user_informations_model__WEBPACK_IMPORTED_MODULE_1__[\"UserInformations\"]();\n};\n\n//# sourceURL=webpack:///./src/shared/models/user.model.js?");
 
 /***/ })
 
