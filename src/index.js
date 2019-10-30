@@ -1,3 +1,5 @@
 import { Login } from "./shared/components/login.component";
 
-new Login();
+const login = new Login();
+login.display();
+
