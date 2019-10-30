@@ -6,11 +6,22 @@ import { LoginForm } from "./loginForm.component";
 export class Login{
 
     constructor(){
+        this.div1;
+        this.titleComponent;
+        this.loginForm
+        this.registerButton;
+        
+    }
+
+    display(){
         const div1 = document.createElement("div");
-        new TitleComponent(div1);
+        const titleComponent = new TitleComponent("Worlds of Java");
+        titleComponent.display(div1);
         const user = new User("licorne","bisournours");
-        new LoginForm(div1, user);
-        new RegisterButton(div1);
+        const loginForm = new LoginForm("Go");
+        loginForm.display(div1, user)
+        const registerButton = new RegisterButton("Register", "https://google.fr");
+        registerButton.display(div1);
         document.body.appendChild(div1)
     }
 
