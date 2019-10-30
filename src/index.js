@@ -1,3 +1,16 @@
+import {User} from "./shared/models/user.model";
+import {TitleComponent } from "./shared/components/title.component";
+import { RegisterButton } from "./shared/components/register-button.component";
+import { LoginForm } from "./shared/components/loginForm.component";
+
+const div1 = document.createElement("div");
+const titleComponent = new TitleComponent(div1);
+//titleComponent.logo.setAttribute("src", "assets/images/icone.jpg" );
+new LoginForm(div1);
+new RegisterButton(div1);
+document.body.appendChild(div1)
+
+
 /*
 const logoLink = "image/logo/logo.png";
 let pageTitle = "Worlds of Game Society";
@@ -13,7 +26,6 @@ const goLink = "/home";
 const goText = "Go";
 
 let valid = false;
-const div1 = document.createElement("div");
 const div2 = document.createElement("div");
 const paragrapheImage = document.createElement("p");
 const logo = document.createElement("img");
@@ -66,8 +78,6 @@ div1.appendChild(div2);
 div1.appendChild(form);
 registerButtonLink.appendChild(registerButton)
 div1.appendChild(registerButtonLink)
-document.body.appendChild(div1)
-
 const create = (element, balise) => {
     element = document.createElement(balise);
     return element;
@@ -92,100 +102,98 @@ for(const key in attribute){
 }
 */
 
-import {User} from "./shared/models/user.model";
+// const newUser = new User("test@test.com", "licorne","Bisounours");
 
-const newUser = new User("test@test.com", "licorne","Bisounours");
+// console.log(newUser);
 
-console.log(newUser);
+// // const user = {
+// //     login : "",
+// //     password : ""
+// // };
 
-// const user = {
-//     login : "",
-//     password : ""
+// const setAttribute = (elem, json) => {
+//     for(const key in json){
+//         elem.setAttribute(key, json[key])
+//     }
+// }
+
+// const div1 = document.createElement("div");
+// setAttribute(div1, {class : "div1"});
+
+// const displayTitle = () => {
+//     title.div2 = document.createElement("div");
+//     title.titleElement = document.createElement("h1");
+//     title.textNode = document.createTextNode("Worlds of Game");
+//     title.logo = document.createElement("img");
+//     setAttribute(title.div2, {class : "div2"});
+//     setAttribute(title.logo, {
+//         src : "assets/images/logo.png",
+//         alt : "logo du site",
+//         style : "height : 100px"
+//     });
+//     title.titleElement.appendChild(title.textNode);
+//     title.div2.appendChild(title.logo);
+//     title.div2.appendChild(title.titleElement);
+//     div1.appendChild(title.div2);
 // };
 
-const setAttribute = (elem, json) => {
-    for(const key in json){
-        elem.setAttribute(key, json[key])
-    }
-}
+// const displayLoginForm = () => {
+//     let valid = false;
+//     const form = document.createElement("form");
+//     const divFormLogin = document.createElement("div");
+//     const loginInput = document.createElement("input");
+//     const divFormPassword = document.createElement("div");
+//     const passwordInput = document.createElement("input");
+//     const divGo = document.createElement("div");
+//     const goButtonLink = document.createElement("a");
+//     const goButton = document.createElement("button");
+//     const goButtonText = document.createTextNode("Go");
+//     setAttribute(form, {
+//         method : "post",
+//         action : "",
+//         class :"form"
+//     });
+//     setAttribute(loginInput, {
+//         value : newUser.email,
+//         placeholder : "email",
+//         type : "mail",
+//     });
+//     setAttribute(passwordInput, {
+//         value : newUser.password,
+//         placeholder : "password"
+//     });
+//     setAttribute(goButton, {type : "submit"});
+//     setAttribute(goButtonLink, {href : "/home.js"});
+//     goButton.appendChild(goButtonText);
+//     goButtonLink.appendChild(goButton);
+//     divGo.appendChild(goButtonLink);
+//     divFormLogin.appendChild(loginInput);
+//     divFormPassword.appendChild(passwordInput);
+//     form.appendChild(divFormLogin);
+//     form.appendChild(divFormPassword);
+//     form.appendChild(divGo);
+//     div1.appendChild(form);
+// };
 
-const div1 = document.createElement("div");
-setAttribute(div1, {class : "div1"});
+// const displayRegisterButton = () => {
+//     const registerButton = document.createElement("button");
+//     const registerButtonText = document.createTextNode("Register");
+//     const registerButtonLink = document.createElement("a");
+//     setAttribute(registerButtonLink, {href : "https://google.fr"});
+//     setAttribute(registerButton, {type : "submit"});
+//     registerButton.appendChild(registerButtonText);
+//     registerButtonLink.appendChild(registerButton);
+//     div1.appendChild(registerButtonLink);
+// };
 
-const displayTitle = () => {
-    const div2 = document.createElement("div");
-    const titleElement = document.createElement("h1");
-    const textNode = document.createTextNode("Worlds of Game");
-    const logo = document.createElement("img");
-    setAttribute(div2, {class : "div2"});
-    setAttribute(logo, {
-        src : "assets/images/logo.png",
-        alt : "logo du site",
-        style : "height : 100px"
-    });
-    titleElement.appendChild(textNode);
-    div2.appendChild(logo);
-    div2.appendChild(titleElement);
-    div1.appendChild(div2);
-};
+// const displayLogin = () => {
+//     displayTitle();
+//     displayLoginForm();
+//     displayRegisterButton();
+//     document.body.appendChild(div1);
+// };
 
-const displayLoginForm = () => {
-    let valid = false;
-    const form = document.createElement("form");
-    const divFormLogin = document.createElement("div");
-    const loginInput = document.createElement("input");
-    const divFormPassword = document.createElement("div");
-    const passwordInput = document.createElement("input");
-    const divGo = document.createElement("div");
-    const goButtonLink = document.createElement("a");
-    const goButton = document.createElement("button");
-    const goButtonText = document.createTextNode("Go");
-    setAttribute(form, {
-        method : "post",
-        action : "",
-        class :"form"
-    });
-    setAttribute(loginInput, {
-        value : newUser.email,
-        placeholder : "email",
-        type : "mail",
-    });
-    setAttribute(passwordInput, {
-        value : newUser.password,
-        placeholder : "password"
-    });
-    setAttribute(goButton, {type : "submit"});
-    setAttribute(goButtonLink, {href : "/home.js"});
-    goButton.appendChild(goButtonText);
-    goButtonLink.appendChild(goButton);
-    divGo.appendChild(goButtonLink);
-    divFormLogin.appendChild(loginInput);
-    divFormPassword.appendChild(passwordInput);
-    form.appendChild(divFormLogin);
-    form.appendChild(divFormPassword);
-    form.appendChild(divGo);
-    div1.appendChild(form);
-};
-
-const displayRegisterButton = () => {
-    const registerButton = document.createElement("button");
-    const registerButtonText = document.createTextNode("Register");
-    const registerButtonLink = document.createElement("a");
-    setAttribute(registerButtonLink, {href : "https://google.fr"});
-    setAttribute(registerButton, {type : "submit"});
-    registerButton.appendChild(registerButtonText);
-    registerButtonLink.appendChild(registerButton);
-    div1.appendChild(registerButtonLink);
-};
-
-const displayLogin = () => {
-    displayTitle();
-    displayLoginForm();
-    displayRegisterButton();
-    document.body.appendChild(div1);
-};
-
-displayLogin();
+// displayLogin();
 
 
 
