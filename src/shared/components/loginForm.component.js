@@ -3,18 +3,17 @@ import { User } from "../models/user.model";
 
 export class LoginForm extends Components {
 
-    constructor(div1) {
+    constructor(div1, user) {
         super();
-        const user = new User("licorne","bisournours");
-        const form = document.createElement("form");
-        const divFormLogin = document.createElement("div");
-        const loginInput = document.createElement("input");
-        const divFormPassword = document.createElement("div");
-        const passwordInput = document.createElement("input");
-        const divGo = document.createElement("div");
-        this.goButtonLink = document.createElement("a");
-        const goButton = document.createElement("button");
-        this.goButtonText = document.createTextNode("Go");
+        const form = super.createAppendElement(div1, "form");
+        const divFormLogin = super.createAppendElement(form, "div");
+        const loginInput = super.createAppendElement(divFormLogin, "input");
+        const divFormPassword = super.createAppendElement(form, "div");
+        const passwordInput = super.createAppendElement(divFormPassword, "input");
+        const divGo = super.createAppendElement(form, "div");
+        this.goButtonLink = super.createAppendElement(divGo, "a");
+        const goButton = super.createAppendElement(this.goButtonLink, "button");
+        this.goButtonText = super.createTextAndAppendElement(goButton,"Go");
         super.setAttribute(form, {
             method : "post",
             action : "",
@@ -31,16 +30,5 @@ export class LoginForm extends Components {
         });
         super.setAttribute(goButton, {type : "submit"});
         super.setAttribute(this.goButtonLink, {href : "/home.js"});
-        goButton.appendChild(this.goButtonText);
-        this.goButtonLink.appendChild(goButton);
-        divGo.appendChild(this.goButtonLink);
-        divFormLogin.appendChild(loginInput);
-        divFormPassword.appendChild(passwordInput);
-        form.appendChild(divFormLogin);
-        form.appendChild(divFormPassword);
-        form.appendChild(divGo);
-        div1.appendChild(form);
-
     }
-
 }

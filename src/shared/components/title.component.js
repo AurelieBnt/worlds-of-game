@@ -4,18 +4,13 @@ export class TitleComponent extends Components {
 
     constructor(div1) {
         super();
-        const titleElement = document.createElement("h1");
-        this.textNode = document.createTextNode("Worlds of Game");
-        this.logo = document.createElement("img");
+        const titleElement = super.createAppendElement(div1, "h1");
+        this.logo = super.createAppendElement(div1,"img");
+        this.textNode = super.createTextAndAppendElement(titleElement, "Worlds of Game");
         super.setAttribute(this.logo, {
             src: "assets/images/logo.png",
             alt: "logo du site",
             style: "height : 100px"
-        });
-        titleElement.appendChild(this.textNode);
-        div1.appendChild(this.logo);
-        div1.appendChild(titleElement);
-        
+        });        
     }
-
 }
