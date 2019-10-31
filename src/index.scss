@@ -5,4 +5,12 @@ body {
     p {
         color: white;
     }
+    h1 {
+        box-sizing: border-box;
+        border: 2px solid black;
+    }
+
+    img {
+        margin-bottom: 20px;
+    }
 }
