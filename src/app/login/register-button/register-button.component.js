@@ -1,6 +1,6 @@
 import { Components } from "../../../shared/components/super-class/super.component";
 
-export class RegisterButton extends Components {
+export class RegisterButtonComponent extends Components {
 
     constructor (textNode, link) {
         super();

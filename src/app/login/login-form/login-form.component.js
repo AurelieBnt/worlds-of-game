@@ -1,7 +1,9 @@
 import { Components } from "../../../shared/components/super-class/super.component";
+import { InputComponent } from "../../../shared/components/input.component/input.component";
+import { Input } from "../../../shared/models/input.model";
 
 
-export class LoginForm extends Components {
+export class LoginFormComponent extends Components {
 
     constructor(textNode, link) {
         super();
@@ -12,9 +14,14 @@ export class LoginForm extends Components {
     display(div1, user){
         const form = super.createAppendElement(div1, "form");
         const divFormLogin = super.createAppendElement(form, "div");
-        const loginInput = super.createAppendElement(divFormLogin, "input");
         const divFormPassword = super.createAppendElement(form, "div");
-        const passwordInput = super.createAppendElement(divFormPassword, "input");
+
+        const loginInput = new InputComponent(new Input("loginInput", "loginInput", user.email, "email", "mail"));
+        loginInput.display(divFormLogin);
+
+        const passwordInput = new InputComponent(new Input("passwordInput","passwordInput", user.password, "password", "text"));
+        passwordInput.display(divFormPassword);
+
         const divGo = super.createAppendElement(form, "div");
         const goButtonLink = super.createAppendElement(divGo, "a");
         const goButton = super.createAppendElement(goButtonLink, "button");
@@ -24,15 +31,7 @@ export class LoginForm extends Components {
             action : "",
             class :"form"
         });
-        super.setAttribute(loginInput, {
-            value : user.email,
-            placeholder : "email",
-            type : "mail",
-        });
-        super.setAttribute(passwordInput, {
-            value : user.password,
-            placeholder : "password"
-        });
+        
         super.setAttribute(goButton, {type : "submit"});
         super.setAttribute(goButtonLink, {href : this.link});
     }
