@@ -2,20 +2,21 @@ import { Components } from "./super-component";
 
 export class TitleComponent extends Components {
 
-    constructor(titleText) {
+    constructor(titleText, cheminImage, height) {
         super();
-        this.logo;
+        this.height = height;
+        this.cheminImage = cheminImage;
         this.titleText = titleText    
     }
 
     display(div1){
         const titleElement = super.createAppendElement(div1, "h1");
-        this.logo = super.createAppendElement(div1,"img");
+        const logo = super.createAppendElement(div1,"img");
         const textNode = super.createTextAndAppendElement(titleElement, this.titleText);
-        super.setAttribute(this.logo, {
-            src: "assets/images/logo.png",
+        super.setAttribute(logo, {
+            src: this.cheminImage,
             alt: "logo du site",
-            style: "height : 100px"
+            style: this.height
         }); 
     }
 }

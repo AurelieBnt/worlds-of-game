@@ -1,11 +1,7 @@
 export class Components {
 
-    constructor (elem, json, parent, child, name) {
-        this.elem = elem;
-        this.json = json;
-        this.parent = parent;
-        this.child = child;
-        this.name = name;
+    constructor () {
+        
     }
 
     setAttribute(elem, json) {

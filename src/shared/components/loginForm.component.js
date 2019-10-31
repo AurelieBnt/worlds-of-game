@@ -3,9 +3,9 @@ import { User } from "../models/user.model";
 
 export class LoginForm extends Components {
 
-    constructor(textNode) {
+    constructor(textNode, link) {
         super();
-        this.goButtonLink;
+        this.link = link;
         this.textNode = textNode;   
     }
 
@@ -16,8 +16,8 @@ export class LoginForm extends Components {
         const divFormPassword = super.createAppendElement(form, "div");
         const passwordInput = super.createAppendElement(divFormPassword, "input");
         const divGo = super.createAppendElement(form, "div");
-        this.goButtonLink = super.createAppendElement(divGo, "a");
-        const goButton = super.createAppendElement(this.goButtonLink, "button");
+        const goButtonLink = super.createAppendElement(divGo, "a");
+        const goButton = super.createAppendElement(goButtonLink, "button");
         const goButtonText = super.createTextAndAppendElement(goButton,this.textNode);
         super.setAttribute(form, {
             method : "post",
@@ -34,6 +34,6 @@ export class LoginForm extends Components {
             placeholder : "password"
         });
         super.setAttribute(goButton, {type : "submit"});
-        super.setAttribute(this.goButtonLink, {href : "/home.js"});
+        super.setAttribute(goButtonLink, {href : this.link});
     }
 }

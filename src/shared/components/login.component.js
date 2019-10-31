@@ -6,19 +6,15 @@ import { LoginForm } from "./loginForm.component";
 export class Login{
 
     constructor(){
-        this.div1;
-        this.titleComponent;
-        this.loginForm
-        this.registerButton;
-        
+                
     }
 
     display(){
         const div1 = document.createElement("div");
-        const titleComponent = new TitleComponent("Worlds of Java");
+        const titleComponent = new TitleComponent("Worlds of Java", "assets/images/logoOfficiel.png", "height : 150px");
         titleComponent.display(div1);
         const user = new User("licorne","bisournours");
-        const loginForm = new LoginForm("Go");
+        const loginForm = new LoginForm("Go", "www.google.fr");
         loginForm.display(div1, user)
         const registerButton = new RegisterButton("Register", "https://google.fr");
         registerButton.display(div1);
