@@ -10038,3 +10038,10 @@ a.text-dark:hover, a.text-dark:focus {
 body p {
   color: white; }
 
+body h1 {
+  box-sizing: border-box;
+  border: 2px solid black; }
+
+body img {
+  margin-bottom: 20px; }
+
