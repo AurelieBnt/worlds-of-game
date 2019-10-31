@@ -1,5 +1,6 @@
-import { Login } from "./shared/components/login.component";
+import { Login } from "./app/login/login.component";
+import {User} from "./shared/models/user.model";
 
-const login = new Login();
+const login = new Login(new User("licorne","bisournours"));
 login.display();
 
