@@ -1,7 +1,6 @@
 export class Components {
 
-    constructor () {
-        
+    constructor () { 
     }
 
     setAttribute(elem, json) {
@@ -21,5 +20,4 @@ export class Components {
         parent.appendChild(child);
         return this.child;
     }
-
 }

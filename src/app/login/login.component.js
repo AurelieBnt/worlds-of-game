@@ -15,7 +15,7 @@ export class LoginComponent{
         titleComponent.display(div1);
         const loginForm = new LoginFormComponent("Go", "www.google.fr");
         loginForm.display(div1, this.user)
-        const registerButton = new RegisterButtonComponent("Register", "../register/register.component.js");
+        const registerButton = new RegisterButtonComponent("Register", "/register.component.js");
         registerButton.display(div1);
         document.body.appendChild(div1)
     }
