@@ -13,7 +13,10 @@ export class RegisterButtonComponent extends Components {
         const registerButton = super.createAppendElement(registerButtonLink, "button");
         const registerButtonText = super.createTextAndAppendElement(registerButton, this.textNode);
         super.setAttribute(registerButtonLink, {href : this.link});
-        super.setAttribute(registerButton, {type : "submit"});
+        super.setAttribute(registerButton, {type : "submit", id : this.textNode});
+        // let registerLink = document.getElementById(this.textNode);
+        // registerLink.addEventListener("click", ()=>{})
+        
     }
 
 }
