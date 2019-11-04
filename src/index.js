@@ -5,6 +5,6 @@ import { RegisterComponent } from "./app/register/register.component";
 // const loginComponent = new LoginComponent(new User("licorne","bisournours"));
 // loginComponent.display();
 
-const registerComponent = new RegisterComponent();
-registerComponent.display();
+const registerComponent = new RegisterComponent("Register");
+registerComponent.display(document.body);
 
