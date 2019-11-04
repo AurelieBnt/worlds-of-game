@@ -1,15 +1,18 @@
-import {UserAdress} from "./user-adress.model";
-import {UserInformations} from "./user-informations.model";
 
 export class User {
 
 
-    constructor (email, password, surname) {
+    constructor (email, password, surname,gender, firstname, lastname, phone, adress, city, zipcode) {
         this.email = email;
         this.password = password;
         this.surname = surname; 
-        this.userAdress = new UserAdress();
-        this.userInformations = new UserInformations();
+        this.phone = phone;
+        this.adress = adress;
+        this.city = city;
+        this.zipcode = zipcode;
+        this.gender = gender;
+        this.firstname = firstname;
+        this.lastname = lastname;
     };
 
 }
