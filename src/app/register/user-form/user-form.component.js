@@ -104,7 +104,7 @@ export class UserFormComponent extends Components {
         this.user.email = this.email.element.value;
         this.user.password = this.password.element.value;
         this.user.surname = this.surname.element.value;
-        // console.log(this.monsieurRadio.element.checked);
+
         // if(this.monsieurRadio.element.checked){
         //     this.user.gender = this.monsieurRadio.element.value;
         // }else {
@@ -119,8 +119,7 @@ export class UserFormComponent extends Components {
         this.user.adress = this.adress.element.value;
         this.user.city = this.city.element.value;
         this.user.zipcode = this.zipcode.element.value;
-        //this.user.email = this.email.value
-        //email, password, surname, gender, firstname, lastname, phone,adress, city, zipCode
+        
         console.log(this.user);            
     }
 }

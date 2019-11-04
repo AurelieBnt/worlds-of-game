@@ -7,8 +7,8 @@ export class BrandTitleComponent extends Components {
         super();
         this.height = height;
         this.cheminImage = cheminImage;
-        this.titleText = titleText
-        this.title = new TitleComponent(titleText)    
+        this.titleText = titleText;
+        this.title = new TitleComponent(titleText); 
     }
 
     display(div1){
