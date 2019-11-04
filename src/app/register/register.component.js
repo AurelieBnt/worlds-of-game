@@ -1,21 +1,23 @@
 import { Components } from "../../shared/components/super-class/super.component";
-import { LabelComponent } from "../../shared/components/label.component/label.component";
-import { Input } from "../../shared/models/input.model";
-import { InputComponent } from "../../shared/components/input.component/input.component";
 import { UserFormComponent } from "./user-form/user-form.component";
+import { TitleComponent } from "../../shared/components/title/title.component";
+import { User } from "../../shared/models/user.model";
 
 export class RegisterComponent extends Components {
 
-    constructor () {
+    constructor (text) {
         super();
+        this.text = text;
+        this.user = new User();
     }
 
-    display(){
+    display(parent){
         const div1 = document.createElement("div");
+        const title = new TitleComponent(this.text);
+        title.display(div1);
         const userFormComponent = new UserFormComponent();
         userFormComponent.display(div1);
-        
-        document.body.appendChild(div1);
+        parent.appendChild(div1);
     }
 
 }
