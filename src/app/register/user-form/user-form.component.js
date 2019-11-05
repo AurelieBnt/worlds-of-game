@@ -2,29 +2,20 @@ import { Components } from "../../../shared/components/super-class/super.compone
 import { InputComponent } from "../../../shared/components/input.component/input.component";
 import { LabelComponent } from "../../../shared/components/label.component/label.component";
 import { User } from "../../../shared/models/user.model";
+import $ from 'jquery';
+import { UserService } from "../../../shared/services/user-services/user.services";
 
 export class UserFormComponent extends Components {
 
-    constructor(user, email, password, surname, gender, firstname, lastname, phone,adress, city, zipcode){
-        super();
-        this.user = user;    
-        this.email = email;
-        this.password = password; 
-        this.surname = surname;
-        this.gender = gender;
-        this.firstname = firstname;
-        this.lastname = lastname; 
-        this.phone = phone;
-        this.adress = adress;
-        this.city = city;
-        this.zipcode = zipcode;
-         
+    constructor(){
+        super();             
     }
 
     display(div1){
-        const form = super.createAppendElement(div1, "form");
+        const userForm = super.createAppendElement(div1, "user-form",)
+        const form = super.createAppendElement(userForm, "form");
         const divGender = super.createAppendElement(form, "div");
-        const labelComponentMonsieur = new LabelComponent("Mister");
+        const labelComponentMonsieur = new LabelComponent("Mr");
         labelComponentMonsieur.display(divGender);
         this.monsieurRadio = new InputComponent("mister","gender", "Monsieur", null, "radio");
         this.monsieurRadio.display(divGender);
@@ -43,14 +34,14 @@ export class UserFormComponent extends Components {
         const divFirstname = super.createAppendElement(form, "div");
         const labelFirsname = new LabelComponent("Firstname");
         labelFirsname.display(divFirstname);
-        this.firstname = new InputComponent("firstname","firstname", "", "", "input");
-        this.firstname.display(divFirstname);
+        this.firstName = new InputComponent("firstname","firstname", "", "", "input");
+        this.firstName.display(divFirstname);
 
         const divLastname = super.createAppendElement(form, "div");
         const labelLastname = new LabelComponent("Lastname");
         labelLastname.display(divLastname);
-        this.lastname = new InputComponent("lastname","lastname", "", "", "input");
-        this.lastname.display(divLastname);
+        this.lastName = new InputComponent("lastname","lastname", "", "", "input");
+        this.lastName.display(divLastname);
 
         const divMail = super.createAppendElement(form, "div");
         const labelMail = new LabelComponent("Email");
@@ -73,8 +64,8 @@ export class UserFormComponent extends Components {
         const divZipcode = super.createAppendElement(form, "div");
         const labelZipcode = new LabelComponent("Zipcode");
         labelZipcode.display(divZipcode);
-        this.zipcode = new InputComponent("zipcode","zipcode", "", "", "input");
-        this.zipcode.display(divZipcode);
+        this.zip = new InputComponent("zipcode","zipcode", "", "", "input");
+        this.zip.display(divZipcode);
 
         const divCity = super.createAppendElement(form, "div");
         const labelCity = new LabelComponent("City");
@@ -100,27 +91,26 @@ export class UserFormComponent extends Components {
 
     clickButton(event) {
         event.preventDefault();
-        this.user = new User();
-        this.user.email = this.email.element.value;
-        this.user.password = this.password.element.value;
-        this.user.surname = this.surname.element.value;
+        const user = UserService.get();
+        user.email = this.email.element.value;
+        user.password = this.password.element.value;
+        user.surname = this.surname.element.value;
 
-        // if(this.monsieurRadio.element.checked){
-        //     this.user.gender = this.monsieurRadio.element.value;
-        // }else {
-        //     this.user.gender = this.madameRadio.element.value;
-        // }
-
-        this.user.gender = this.madameRadio.element.checked?this.madameRadio.element.value:this.monsieurRadio.element.value;
+        //this.user.gender = this.madameRadio.element.checked?this.madameRadio.element.value:this.monsieurRadio.element.value;
         
-        this.user.firstname = this.firstname.element.value;
-        this.user.lastname = this.lastname.element.value;
-        this.user.phone = this.phone.element.value;
-        this.user.adress = this.adress.element.value;
-        this.user.city = this.city.element.value;
-        this.user.zipcode = this.zipcode.element.value;
+        user.firstName = this.firstName.element.value;
+        user.lastName = this.lastName.element.value;
+        user.phone = this.phone.element.value;
+        user.adress = this.adress.element.value;
+        user.city = this.city.element.value;
+        user.zip = this.zip.element.value;
         
-        console.log(this.user);            
+        UserService.post()
+        .then(
+            (data)=>{console.log(data);}
+        ).catch(
+            (xhr)=>{console.log(xhr.status);}
+        );
     }
 }
 
@@ -147,3 +137,10 @@ export class UserFormComponent extends Components {
             // console.log(this.user);
         //this.user.email = input.value;
         //console.log(input);
+
+        
+        // if(this.monsieurRadio.element.checked){
+        //     this.user.gender = this.monsieurRadio.element.value;
+        // }else {
+        //     this.user.gender = this.madameRadio.element.value;
+        // }

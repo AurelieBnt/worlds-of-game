@@ -11,15 +11,15 @@ export class LoginFormComponent extends Components {
         this.textNode = textNode;   
     }
 
-    display(div1, user){
+    display(div1){
         const form = super.createAppendElement(div1, "form");
         const divFormLogin = super.createAppendElement(form, "div");
         const divFormPassword = super.createAppendElement(form, "div");
 
-        const loginInput = new InputComponent(new Input("loginInput", "loginInput", user.email, "email", "mail"));
+        const loginInput = new InputComponent(new Input("loginInput", "loginInput", "email", "email", "mail"));
         loginInput.display(divFormLogin);
 
-        const passwordInput = new InputComponent(new Input("passwordInput","passwordInput", user.password, "password", "password"));
+        const passwordInput = new InputComponent(new Input("passwordInput","passwordInput", "password", "password", "password"));
         passwordInput.display(divFormPassword);
 
         const divGo = super.createAppendElement(form, "div");
