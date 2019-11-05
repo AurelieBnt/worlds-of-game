@@ -2,17 +2,17 @@
 export class User {
 
 
-    constructor (email, password, surname,gender, firstname, lastname, phone, adress, city, zipcode) {
+    constructor (email, password, surname,gender, firstName, lastName, phone, adress, city, zip) {
         this.email = email;
         this.password = password;
         this.surname = surname; 
         this.phone = phone;
         this.adress = adress;
         this.city = city;
-        this.zipcode = zipcode;
+        this.zip = zip;
         this.gender = gender;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstName;
+        this.lastName = lastName;
     };
 
 }
