@@ -1,8 +1,8 @@
 
-import {TitleComponent } from "../../shared/components/title/title.component";
+import {TitleComponent } from "../../shared/components/title.component/title.component";
 import { RegisterButtonComponent } from "./register-button/register-button.component";
 import { LoginFormComponent } from "./login-form/login-form.component";
-import { BrandTitleComponent } from "../../shared/components/brand-title/brand-title.component";
+import { BrandTitleComponent } from "../../shared/components/brand-title.component/brand-title.component";
 
 export class LoginComponent{
 
