@@ -7,7 +7,7 @@ export class LabelComponent extends Components{
         this.text = text;
     }
     
-    display (parent) {
+    display (parent) {        
     const label = super.createAppendElement(parent, "label");
     super.createTextAndAppendElement(label, this.text);
     }
