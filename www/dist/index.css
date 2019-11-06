@@ -10035,6 +10035,13 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+user-form .form {
+  width: 90px;
+  margin-right: 5px; }
+
+user-form button {
+  color: blueviolet; }
+
 body p {
   color: white; }
 
