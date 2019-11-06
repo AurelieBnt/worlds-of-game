@@ -13,11 +13,16 @@ export class RegisterComponent extends Components {
 
     display(parent){
         const div1 = document.createElement("div");
-        const title = new TitleComponent(this.text);
-        title.display(div1);
-        const userFormComponent = new UserFormComponent(this.user);
-        userFormComponent.display(div1);
+        this.title = new TitleComponent(this.text);
+        this.title.display(div1);
+        this.userFormComponent = new UserFormComponent(this.user);
+        this.userFormComponent.display(div1);
         parent.appendChild(div1);
+    }
+
+    hide(){
+        this.title.parentNode.removeChild(this.title);
+        this.userFormComponent.hide();
     }
 
 }

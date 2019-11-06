@@ -59,28 +59,39 @@ export class UserFormComponent extends Components {
 
     clickButton(event) {
         event.preventDefault();
-        const user = UserService.get();
+
+        window.history.pushState(
+            {},
+            "Login Page",
+            "/Register"
+        );
+        
+        
+        this.userForm.parentNode.removeChild(this.userForm);
+
+
+        // const user = UserService.get();
         // //this.user.gender = this.madameRadio.element.checked?this.madameRadio.element.value:this.monsieurRadio.element.value;
 
-        for (const key in this.inputs) {
-            user[this.inputs[key].id] = this.inputs[key].element.value;
-        }
+        // for (const key in this.inputs) {
+        //     user[this.inputs[key].id] = this.inputs[key].element.value;
+        // }
 
-        this.postStart();
-        UserService.post()
-            .then(
-                (data) => {
-                    this.postSuccess(data);
-                    this.postEnd();
-                }
-                // (data)=>{console.log(data);}
-            ).catch(
-                (xhr) => {
-                    this.postError(xhr.status);
-                    this.postEnd();
-                }
-                // (xhr)=>{console.log(xhr.status);}
-            );
+        // this.postStart();
+        // UserService.post()
+        //     .then(
+        //         (data) => {
+        //             this.postSuccess(data);
+        //             this.postEnd();
+        //         }
+        //         // (data)=>{console.log(data);}
+        //     ).catch(
+        //         (xhr) => {
+        //             this.postError(xhr.status);
+        //             this.postEnd();
+        //         }
+        //         // (xhr)=>{console.log(xhr.status);}
+        //     );
     }
 
     postStart() {
@@ -113,6 +124,11 @@ export class UserFormComponent extends Components {
         this.saveButton.display(this.divButton);
         this.saveButton.button.addEventListener("click", (event) => { this.clickButton(event); });
     }
+
+    hide(){
+        this.userForm.parentNode.removeChild(this.userForm);
+    }
+
 }
 
     //for (const key in this.inputs){
