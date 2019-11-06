@@ -9,7 +9,7 @@ export class AlertComponent extends Components{
     }
     
     display (parent) {
-    this.element = super.createAppendElement(parent, "label");    
+    this.element = super.createAppendElement(parent, "h4");    
     super.createTextAndAppendElement(this.element, this.text);
     parent.insertBefore(this.element, parent.firstChild);
     //super.setAttribute(this.element, {name : this.name, value : this.value});

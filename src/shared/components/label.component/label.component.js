@@ -5,11 +5,12 @@ export class LabelComponent extends Components{
     constructor (text) {
         super(); 
         this.text = text;
+        this.element = null;
     }
     
     display (parent) {        
-    const label = super.createAppendElement(parent, "label");
-    super.createTextAndAppendElement(label, this.text);
+    this.element = super.createAppendElement(parent, "label");
+    super.createTextAndAppendElement(this.element, this.text);
     }
 
 }

@@ -45,6 +45,7 @@ export class UserFormComponent extends Components {
             const label = new LabelComponent(this.inputs[key].name);
             label.display(div);
             this.inputs[key].display(div);
+            super.setAttribute(label.element, {class : "form"});
         }
 
         this.divButton = super.createAppendElement(form, "div");
@@ -105,7 +106,6 @@ export class UserFormComponent extends Components {
 
         this.alert.display(this.userForm);
     }
-
     postEnd() {
         console.log("End");
         this.loadingComponent.hide();
