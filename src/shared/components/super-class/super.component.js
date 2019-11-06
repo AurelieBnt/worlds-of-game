@@ -18,6 +18,6 @@ export class Components {
     createTextAndAppendElement(parent, textNode){
         const child = document.createTextNode(textNode)
         parent.appendChild(child);
-        return this.child;
+        return child;
     }
 }
