@@ -1,5 +1,6 @@
 import { RegisterComponent } from "../../../app/register/register.component";
 import { HomeComponent } from "../../../app/home/home.component";
+import { LoginComponent } from "../../../app/login/login.component";
 
 export class Router {
 
@@ -22,6 +23,10 @@ export class Router {
             case "register":
                 const registerComponent = new RegisterComponent();
                 this.addComponent(name, `/${name}`, registerComponent);
+                break;
+            case "login":
+                const loginComponent = new LoginComponent();
+                this.addComponent(name, `/${name}`, loginComponent);
                 break;
             }
         
