@@ -1,20 +1,29 @@
 import { Components } from "../../../shared/components/super-class/super.component";
+import { ButtonComponent } from "../../../shared/components/button.component/button.component";
+import { Router } from "../../../shared/services/router.services/router.services";
 
 export class RegisterButtonComponent extends Components {
 
-    constructor (textNode, link) {
+    constructor(textNode, link) {
         super();
         this.link = link;
         this.textNode = textNode;
+        this.router = new Router();
     }
 
-    display (div1) {
-        const registerButtonLink = super.createAppendElement(div1, "a");
-        const registerButton = super.createAppendElement(registerButtonLink, "button");
-        const registerButtonText = super.createTextAndAppendElement(registerButton, this.textNode);
-        super.setAttribute(registerButtonLink, {href : this.link});
-        super.setAttribute(registerButton, {type : "submit", id : this.textNode});
-        
+    display(parent) {
+        this.divRegisterButton = super.createAppendElement(parent, "register-button");
+        this.registerButton = new ButtonComponent("Register", "submit");
+        this.registerButton.display(this.divRegisterButton);
+        this.registerButton.button.addEventListener("click", (event) => { this.clickButton(event); })
+
+    }
+    hide() {
+        this.divRegisterButton.parentNode.removeChild(this.divRegisterButton);
     }
 
+    clickButton() {
+        event.preventDefault();
+        this.router.navigate("register");
+    }
 }

@@ -11,13 +11,18 @@ export class BrandTitleComponent extends Components {
         this.title = new TitleComponent(titleText); 
     }
 
-    display(div1){
-        const logo = super.createAppendElement(div1,"img");
+    display(parent){
+        this.divBrand = super.createAppendElement(parent, "brand-component");
+        const logo = super.createAppendElement(this.divBrand,"img");
         super.setAttribute(logo, {
             src: this.cheminImage,
             alt: "logo du site",
             style: this.height
         }); 
-        this.title.display(div1);
+        this.title.display(this.divBrand);
+    }
+
+    hide(){
+        this.divBrand.parentNode.removeChild(this.divBrand);
     }
 }
