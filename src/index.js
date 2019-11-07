@@ -8,8 +8,8 @@ import { Router } from "./shared/services/router.services/router.services";
 const router = new Router();
 
 const loginComponent = new LoginComponent();
-// const registerComponent = new RegisterComponent("Register");
-// const homeComponent = new HomeComponent();
+const registerComponent = new RegisterComponent("Register");
+const homeComponent = new HomeComponent();
 
 router.addComponent("login", "/login", loginComponent);
 

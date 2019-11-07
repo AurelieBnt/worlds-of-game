@@ -4,9 +4,8 @@ import { Router } from "../../../shared/services/router.services/router.services
 
 export class RegisterButtonComponent extends Components {
 
-    constructor(textNode, link) {
+    constructor(textNode) {
         super();
-        this.link = link;
         this.textNode = textNode;
         this.router = new Router();
     }
