@@ -1,11 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./src/app/register/user-form/user-form.scss";
+@import "./src/app/login/login.component.scss";
 
 body {
 
-    p {
-        color: white;
-    }
+    background-color: rgba(230, 230, 230, 0.966);
+
 
     img {
         margin-bottom: 20px;
