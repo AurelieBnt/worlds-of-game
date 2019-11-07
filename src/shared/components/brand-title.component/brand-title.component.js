@@ -12,12 +12,12 @@ export class BrandTitleComponent extends Components {
     }
 
     display(div1){
-        this.title.display(div1);
         const logo = super.createAppendElement(div1,"img");
         super.setAttribute(logo, {
             src: this.cheminImage,
             alt: "logo du site",
             style: this.height
         }); 
+        this.title.display(div1);
     }
 }
