@@ -10,7 +10,7 @@ export class LoginComponent{
                         
     }
 
-    display(){
+    display(parent){
         const div1 = document.createElement("div");
         const brandTitleComponent = new BrandTitleComponent("Worlds of Java", "assets/images/logoOfficiel.png", "height : 150px");
         brandTitleComponent.display(div1);
@@ -18,7 +18,7 @@ export class LoginComponent{
         loginForm.display(div1)
         const registerButton = new RegisterButtonComponent("Register", "/register.component.js");
         registerButton.display(div1);
-        document.body.appendChild(div1)
+        parent.appendChild(div1)
     }
 
 }
