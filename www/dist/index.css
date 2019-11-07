@@ -10042,9 +10042,17 @@ user-form .form {
 user-form button {
   color: blueviolet; }
 
-body p {
-  color: white; }
+login-form .form {
+  font-family: "Goudy Bookletter 1911", sans-serif; }
 
-body img {
-  margin-bottom: 20px; }
+login-form #loginInput {
+  margin-bottom: 10px; }
+
+login-form #passwordInput {
+  margin-bottom: 10px; }
+
+body {
+  background-color: rgba(230, 230, 230, 0.966); }
+  body img {
+    margin-bottom: 20px; }
 
