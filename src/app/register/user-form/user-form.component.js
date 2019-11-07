@@ -8,7 +8,7 @@ import { LoadingComponent } from "../../../shared/components/loading.component/l
 import { ButtonComponent } from "../../../shared/components/button.component/button.component";
 import { AlertComponent } from "../../../shared/components/alert.component/alert.component";
 import { TitleComponent } from "../../../shared/components/title.component/title.component";
-import { NavigateService } from "../../../shared/services/navigate.services/navigate.services";
+import { Router } from "../../../shared/services/router.services/router.services";
 import { LoginComponent } from "../../login/login.component";
 
 export class UserFormComponent extends Components {
@@ -66,20 +66,6 @@ export class UserFormComponent extends Components {
 
     clickButton(event) {
         event.preventDefault();
-
-        // window.history.pushState(
-        //     {},
-        //     "Login Page",
-        //     "/Register"
-        // );
-
-        // this.userForm.parentNode.removeChild(this.userForm);
-        // new LoginComponent().display();
-
-        // const navigate = new NavigateService();
-        // navigate.navigate();
-        // console.log("fin");
-
         const user = UserService.retrieve();
         //this.user.gender = this.madameRadio.element.checked?this.madameRadio.element.value:this.monsieurRadio.element.value;
 
@@ -114,8 +100,11 @@ export class UserFormComponent extends Components {
     }
     postSuccess(user) {
         console.log("Success");
-        // this.label = super.createAppendElement(this.divButton, "label");
-        // super.createTextAndAppendElement(this.label, "Success");
+        // window.history.pushState(
+        //     {},
+        //     "Login Page",
+        //     "/Register"
+        // );
     }
     postError(status) {
         console.log("Error");

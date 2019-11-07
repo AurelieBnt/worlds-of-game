@@ -6,6 +6,8 @@ import $ from 'jquery';
 import { UserService } from "../../../shared/services/user-services/user.services";
 import { AlertComponent } from "../../../shared/components/alert.component/alert.component";
 import { LoadingComponent } from "../../../shared/components/loading.component/loading.component";
+import { Router } from "../../../shared/services/router.services/router.services";
+import { LoginComponent } from "../login.component";
 
 export class LoginFormComponent extends Components {
 
@@ -15,10 +17,13 @@ export class LoginFormComponent extends Components {
         this.textNode = textNode;
         this.alert = new AlertComponent("");
         this.loadingComponent = new LoadingComponent("Loading");
+        this.router = new Router();
     }
 
     display(parent) {
-        this.form = super.createAppendElement(parent, "form");
+        
+        this.divLoginComponent = super.createAppendElement(parent, "login-form");
+        this.form = super.createAppendElement(this.divLoginComponent, "form");
         const divFormLogin = super.createAppendElement(this.form, "div");
         const divFormPassword = super.createAppendElement(this.form, "div");
 
@@ -72,7 +77,8 @@ export class LoginFormComponent extends Components {
         this.goButton.button.parentNode.removeChild(this.goButton.button);
     }
     getSuccess(user) {
-
+        this.router.navigate("home");
+    
     }
     getError(status) {
         this.alert.text = 404 === status
@@ -89,6 +95,10 @@ export class LoginFormComponent extends Components {
         this.goButton.display(this.divGo);
         this.goButton.button.addEventListener("click", (event) => { this.clickButton(event); })
 
+    }
+
+    hide(){
+        this.divLoginComponent.parentNode.removeChild(this.divLoginComponent);
     }
 
 }
