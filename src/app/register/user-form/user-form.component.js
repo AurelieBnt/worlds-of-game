@@ -7,12 +7,15 @@ import { UserService } from "../../../shared/services/user-services/user.service
 import { LoadingComponent } from "../../../shared/components/loading.component/loading.component";
 import { ButtonComponent } from "../../../shared/components/button.component/button.component";
 import { AlertComponent } from "../../../shared/components/alert.component/alert.component";
+import { TitleComponent } from "../../../shared/components/title.component/title.component";
+import { NavigateService } from "../../../shared/services/navigate.services/navigate.services";
+import { LoginComponent } from "../../login/login.component";
 
 export class UserFormComponent extends Components {
 
-    constructor() {
+    constructor(text) {
         super();
-        this.loadingComponent = new LoadingComponent("Loading");
+        this.text = text;
         this.inputs = [
             this.surname = new InputComponent("surname", "surname", "", "", "input"),
             this.firstName = new InputComponent("firstName", "firstName", "", "", "input"),
@@ -27,10 +30,14 @@ export class UserFormComponent extends Components {
         this.monsieurRadio = new InputComponent("mister", "gender", "Monsieur", null, "radio");
         this.madameRadio = new InputComponent("miss", "gender", "madame", null, "radio");
         this.alert = new AlertComponent("");
+        this.loadingComponent = new LoadingComponent("Loading");
+
     }
 
     display(div1) {
         this.userForm = super.createAppendElement(div1, "user-form")
+        this.title = new TitleComponent(this.text);
+        this.title.display(this.userForm);
         const form = super.createAppendElement(this.userForm, "form");
         const divGender = super.createAppendElement(form, "div");
         const labelComponentMonsieur = new LabelComponent("Mr");
@@ -45,7 +52,7 @@ export class UserFormComponent extends Components {
             const label = new LabelComponent(this.inputs[key].name);
             label.display(div);
             this.inputs[key].display(div);
-            super.setAttribute(label.element, {class : "form"});
+            super.setAttribute(label.element, { class: "form" });
         }
 
         this.divButton = super.createAppendElement(form, "div");
@@ -60,38 +67,41 @@ export class UserFormComponent extends Components {
     clickButton(event) {
         event.preventDefault();
 
-        window.history.pushState(
-            {},
-            "Login Page",
-            "/Register"
-        );
-        
-        
-        this.userForm.parentNode.removeChild(this.userForm);
+        // window.history.pushState(
+        //     {},
+        //     "Login Page",
+        //     "/Register"
+        // );
 
+        // this.userForm.parentNode.removeChild(this.userForm);
+        // new LoginComponent().display();
 
-        // const user = UserService.get();
-        // //this.user.gender = this.madameRadio.element.checked?this.madameRadio.element.value:this.monsieurRadio.element.value;
+        // const navigate = new NavigateService();
+        // navigate.navigate();
+        // console.log("fin");
 
-        // for (const key in this.inputs) {
-        //     user[this.inputs[key].id] = this.inputs[key].element.value;
-        // }
+        const user = UserService.retrieve();
+        //this.user.gender = this.madameRadio.element.checked?this.madameRadio.element.value:this.monsieurRadio.element.value;
 
-        // this.postStart();
-        // UserService.post()
-        //     .then(
-        //         (data) => {
-        //             this.postSuccess(data);
-        //             this.postEnd();
-        //         }
-        //         // (data)=>{console.log(data);}
-        //     ).catch(
-        //         (xhr) => {
-        //             this.postError(xhr.status);
-        //             this.postEnd();
-        //         }
-        //         // (xhr)=>{console.log(xhr.status);}
-        //     );
+        for (const key in this.inputs) {
+            user[this.inputs[key].id] = this.inputs[key].element.value;
+        }
+
+        this.postStart();
+        UserService.post()
+            .then(
+                (data) => {
+                    this.postSuccess(data);
+                    this.postEnd();
+                }
+                // (data)=>{console.log(data);}
+            ).catch(
+                (xhr) => {
+                    this.postError(xhr.status);
+                    this.postEnd();
+                }
+                // (xhr)=>{console.log(xhr.status);}
+            );
     }
 
     postStart() {
@@ -125,7 +135,7 @@ export class UserFormComponent extends Components {
         this.saveButton.button.addEventListener("click", (event) => { this.clickButton(event); });
     }
 
-    hide(){
+    hide() {
         this.userForm.parentNode.removeChild(this.userForm);
     }
 
