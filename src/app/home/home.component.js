@@ -2,6 +2,7 @@ import { BrandTitleComponent } from "../../shared/components/brand-title.compone
 import { TitleComponent } from "../../shared/components/title.component/title.component";
 import { ButtonComponent } from "../../shared/components/button.component/button.component";
 import { Components } from "../../shared/components/super-class/super.component";
+import { BackButtonComponent } from "../../shared/components/back-button.component/back-button.component";
 
 export class HomeComponent extends Components{
 
@@ -21,6 +22,8 @@ export class HomeComponent extends Components{
         const divSearch = super.createAppendElement(div1, "div");
         const searchGame = new ButtonComponent("Search Game");
         searchGame.display(divSearch);
+        const backButton = new BackButtonComponent("back", "submit", "login");
+        backButton.display(div1);
         parent.appendChild(div1);
     }
 
