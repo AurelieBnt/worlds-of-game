@@ -38,11 +38,7 @@ export class LoginFormComponent extends Components {
         this.goButton.display(this.divGo);
         this.goButton.button.addEventListener("click", (event) => { this.clickButton(event); })
 
-        super.setAttribute(this.form, {
-            method: "post",
-            action: "",
-            class: "form"
-        });
+        super.setAttribute(this.form, {class: "form"});
     }
 
     clickButton() {

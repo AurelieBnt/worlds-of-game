@@ -4,6 +4,7 @@ import { RegisterButtonComponent } from "./register-button/register-button.compo
 import { LoginFormComponent } from "./login-form/login-form.component";
 import { BrandTitleComponent } from "../../shared/components/brand-title.component/brand-title.component";
 import { Components } from "../../shared/components/super-class/super.component";
+import { BackButtonComponent } from "../../shared/components/back-button.component/back-button.component";
 
 export class LoginComponent extends Components{
 
@@ -19,7 +20,7 @@ export class LoginComponent extends Components{
         this.brandTitleComponent.display(div1);
         this.loginForm = new LoginFormComponent("Go", "www.google.fr");
         this.loginForm.display(div1)
-        this.registerButton = new RegisterButtonComponent("Register", "/register.component.js");
+        this.registerButton = new RegisterButtonComponent("Register");
         this.registerButton.display(div1);
         parent.appendChild(div1)
     }
