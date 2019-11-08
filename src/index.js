@@ -1,18 +1,18 @@
-import { Login, LoginComponent } from "./app/login/login.component";
-import {User} from "./shared/models/user.model";
+import { LoginComponent } from "./app/login/login.component";
 import { RegisterComponent } from "./app/register/register.component";
-import { UserService } from "./shared/services/user-services/user.services";
 import { HomeComponent } from "./app/home/home.component";
-import { Router } from "./shared/services/router.services/router.services";
+import { Router } from "./shared/router.services/router.services";
 
-const router = new Router();
 
-const loginComponent = new LoginComponent();
-const registerComponent = new RegisterComponent("Register");
-const homeComponent = new HomeComponent();
+//loginComponent.display(document.body);
 
-router.addComponent("login", "/login", loginComponent);
+Router.addComponent("login", "/login", new LoginComponent());
+Router.addComponent("register", "/register", new RegisterComponent("Register"));
+Router.addComponent("home", "/home", new HomeComponent());
 
-// registerComponent.display(document.body);
-// homeComponent.display(document.body);
+Router.navigate("login");
+
+//router.addComponent("login", "/login", loginComponent);
+
+
 
