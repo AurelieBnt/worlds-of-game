@@ -10,21 +10,28 @@ export class HomeComponent extends Components{
         super()
     }
 
-    display(parent){
+    display(){
         const div1 = document.createElement("div");
-        const brandTitleComponent = new BrandTitleComponent("Welcome to Worlds of Java", "assets/images/logoOfficiel.png", "height : 150px")
-        brandTitleComponent.display(div1)
-        const title = new TitleComponent("Ready for a game party ?");
-        title.display(div1);
+        this.brandTitleComponent = new BrandTitleComponent("Welcome to Worlds of Java", "assets/images/logoOfficiel.png", "height : 150px")
+        this.brandTitleComponent.display(div1)
+        this.title = new TitleComponent("Ready for a game party ?");
+        this.title.display(div1);
         const divPropose = super.createAppendElement(div1, "div");
         const proposeButton = new ButtonComponent("Propose Game");
         proposeButton.display(divPropose);
         const divSearch = super.createAppendElement(div1, "div");
-        const searchGame = new ButtonComponent("Search Game");
-        searchGame.display(divSearch);
-        const backButton = new BackButtonComponent("back", "submit", "login");
-        backButton.display(div1);
-        parent.appendChild(div1);
+        this.searchGame = new ButtonComponent("Search Game");
+        this.searchGame.display(divSearch);
+        this.backButton = new BackButtonComponent("back", "submit", "login");
+        this.backButton.display(div1);
+        document.body.appendChild(div1);
     }
 
+    hide(){
+        this.brandTitleComponent.hide();
+        this.title.hide();
+        this.searchGame.hide();
+        this.backButton.hide();
+
+    }
 }

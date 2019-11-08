@@ -8,7 +8,10 @@ export class TitleComponent extends Components {
     }
 
     display(div1){
-        const titleElement = super.createAppendElement(div1, "h1");
-        const textNode = super.createTextAndAppendElement(titleElement, this.titleText); 
+        this.titleElement = super.createAppendElement(div1, "h1");
+        const textNode = super.createTextAndAppendElement(this.titleElement, this.titleText); 
+    }
+    hide(){
+        this.titleElement.parentNode.removeChild(this.titleElement);
     }
 }
