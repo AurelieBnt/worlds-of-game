@@ -6,7 +6,7 @@ import $ from 'jquery';
 import { UserService } from "../../../shared/services/user-services/user.services";
 import { AlertComponent } from "../../../shared/components/alert.component/alert.component";
 import { LoadingComponent } from "../../../shared/components/loading.component/loading.component";
-import { Router } from "../../../shared/services/router.services/router.services";
+import { Router } from "../../../shared/router.services/router.services";
 import { LoginComponent } from "../login.component";
 
 export class LoginFormComponent extends Components {
@@ -17,7 +17,6 @@ export class LoginFormComponent extends Components {
         this.textNode = textNode;
         this.alert = new AlertComponent("");
         this.loadingComponent = new LoadingComponent("Loading");
-        this.router = new Router();
     }
 
     display(parent) {
@@ -60,7 +59,6 @@ export class LoginFormComponent extends Components {
                     this.getError(xhr.status);
                     this.getEnd();
                 }
-
             );
     }
 
@@ -73,7 +71,7 @@ export class LoginFormComponent extends Components {
         this.goButton.button.parentNode.removeChild(this.goButton.button);
     }
     getSuccess(user) {
-        this.router.navigate("home");
+        Router.navigate("home");
     
     }
     getError(status) {

@@ -12,7 +12,7 @@ export class LoginComponent extends Components{
              super();           
     }
 
-    display(parent){
+    display(){
         this.divLogin = document.createElement("login-component");
         const div1 = super.createAppendElement(this.divLogin, "div");
         super.setAttribute(div1, {class: "divGeneral"});
@@ -22,14 +22,14 @@ export class LoginComponent extends Components{
         this.loginForm.display(div1)
         this.registerButton = new RegisterButtonComponent("Register");
         this.registerButton.display(div1);
-        parent.appendChild(div1)
+        document.body.appendChild(div1)
     }
 
     hide(){
         this.loginForm.hide();
         this.brandTitleComponent.hide();
         this.registerButton.hide();
-        this.divLogin.parentNode.removeChild(this.divLogin);
+        //this.divLogin.parentNode.removeChild(this.divLogin);
 
     }
 

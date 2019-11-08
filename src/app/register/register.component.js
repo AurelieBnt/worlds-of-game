@@ -11,17 +11,18 @@ export class RegisterComponent extends Components {
         this.text = text;
     }
 
-    display(parent){
+    display(){
         const div1 = document.createElement("div");
         this.userFormComponent = new UserFormComponent("Register");
         this.userFormComponent.display(div1);
-        parent.appendChild(div1);
         this.backButton = new BackButtonComponent("back", "submit", "login");
         this.backButton.display(div1);
+        document.body.appendChild(div1);
     }
 
     hide(){
         this.userFormComponent.hide();
+        this.backButton.hide();
     }
 
 }

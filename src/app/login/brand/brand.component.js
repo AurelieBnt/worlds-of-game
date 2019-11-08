@@ -18,7 +18,7 @@ export class Brand {
     setAttribute(elem, json) {
         for (const key in json) {
             elem.setAttribute(key, json[key]);
-        };
+        }
     }
 
 }

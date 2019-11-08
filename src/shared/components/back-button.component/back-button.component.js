@@ -1,5 +1,5 @@
 import { Components } from "../super-class/super.component";
-import { Router } from "../../services/router.services/router.services";
+import { Router } from "../../router.services/router.services";
 
 export class BackButtonComponent extends Components {
 
@@ -23,7 +23,7 @@ export class BackButtonComponent extends Components {
     }
 
     clickButton(){
-        this.router.navigate(this.name);
+        Router.navigate(this.name);
     }
 
 

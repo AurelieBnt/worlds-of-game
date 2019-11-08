@@ -2,14 +2,13 @@ import { Components } from "../../../shared/components/super-class/super.compone
 import { InputComponent } from "../../../shared/components/input.component/input.component";
 import { LabelComponent } from "../../../shared/components/label.component/label.component";
 import { User } from "../../../shared/models/user.model";
-import $ from 'jquery';
+import $ from "jquery";
 import { UserService } from "../../../shared/services/user-services/user.services";
 import { LoadingComponent } from "../../../shared/components/loading.component/loading.component";
 import { ButtonComponent } from "../../../shared/components/button.component/button.component";
 import { AlertComponent } from "../../../shared/components/alert.component/alert.component";
 import { TitleComponent } from "../../../shared/components/title.component/title.component";
-import { Router } from "../../../shared/services/router.services/router.services";
-import { LoginComponent } from "../../login/login.component";
+import { Router } from "../../../shared/router.services/router.services";
 
 export class UserFormComponent extends Components {
 
@@ -35,7 +34,7 @@ export class UserFormComponent extends Components {
     }
 
     display(div1) {
-        this.userForm = super.createAppendElement(div1, "user-form")
+        this.userForm = super.createAppendElement(div1, "user-form");
         this.title = new TitleComponent(this.text);
         this.title.display(this.userForm);
         const form = super.createAppendElement(this.userForm, "form");
@@ -91,7 +90,6 @@ export class UserFormComponent extends Components {
     }
 
     postStart() {
-        console.log("Start");
         if (this.alert.element && this.alert.element.parentNode) {
             this.alert.hide();
         }
@@ -99,12 +97,7 @@ export class UserFormComponent extends Components {
         this.saveButton.button.parentNode.removeChild(this.saveButton.button);
     }
     postSuccess(user) {
-        console.log("Success");
-        // window.history.pushState(
-        //     {},
-        //     "Login Page",
-        //     "/Register"
-        // );
+        Router.navigate("login");
     }
     postError(status) {
         console.log("Error");
