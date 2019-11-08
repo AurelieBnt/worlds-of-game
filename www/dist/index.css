@@ -10051,9 +10051,10 @@ user-form .form {
 user-form button {
   color: blueviolet; }
 
+brand-title-component img {
+  margin-bottom: 10px; }
+
 body {
   background-color: rgba(230, 230, 230, 0.966);
   text-align: center; }
-  body img {
-    margin-bottom: 20px; }
 
