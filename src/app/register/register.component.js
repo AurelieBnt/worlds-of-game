@@ -10,7 +10,7 @@ export class RegisterComponent extends Components {
     }
 
     display(){
-        const div1 = document.createElement("div");
+        const div1 = document.createElement("wog-register-component");
         this.userFormComponent = new UserFormComponent("Register");
         this.userFormComponent.display(div1);
         this.backButton = new BackButtonComponent("back", "submit", "login");

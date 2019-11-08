@@ -3,31 +3,26 @@ import { LoginFormComponent } from "./login-form/login-form.component";
 import { BrandTitleComponent } from "../../shared/components/brand-title.component/brand-title.component";
 import { Components } from "../../shared/components/super-class/super.component";
 
-export class LoginComponent extends Components{
+export class LoginComponent extends Components {
 
-    constructor(){
-             super();           
+    constructor() {
+        super();
     }
 
-    display(){
-        this.divLogin = document.createElement("login-component");
-        const div1 = super.createAppendElement(this.divLogin, "div");
-        super.setAttribute(div1, {class: "divGeneral"});
+    display() {
+        this.divLogin = document.createElement("wog-login");
         this.brandTitleComponent = new BrandTitleComponent("Worlds of Java", "assets/images/logoOfficiel.png", "height : 150px");
-        this.brandTitleComponent.display(div1);
+        this.brandTitleComponent.display(this.divLogin);
         this.loginForm = new LoginFormComponent("Go", "www.google.fr");
-        this.loginForm.display(div1)
+        this.loginForm.display(this.divLogin)
         this.registerButton = new RegisterButtonComponent("Register");
-        this.registerButton.display(div1);
-        document.body.appendChild(div1)
+        this.registerButton.display(this.divLogin);
+        document.body.appendChild(this.divLogin)
     }
 
-    hide(){
+    hide() {
         this.loginForm.hide();
         this.brandTitleComponent.hide();
         this.registerButton.hide();
-        //this.divLogin.parentNode.removeChild(this.divLogin);
-
     }
-
 }

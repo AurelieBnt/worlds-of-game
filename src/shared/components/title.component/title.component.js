@@ -7,11 +7,12 @@ export class TitleComponent extends Components {
         this.titleText = titleText    
     }
 
-    display(div1){
-        this.titleElement = super.createAppendElement(div1, "h1");
+    display(parent){
+        this.divTitle = super.createAppendElement(parent, "wog-title-component");
+        this.titleElement = super.createAppendElement(this.divTitle, "h1");
         const textNode = super.createTextAndAppendElement(this.titleElement, this.titleText); 
     }
     hide(){
-        this.titleElement.parentNode.removeChild(this.titleElement);
+        this.divTitle.parentNode.removeChild(this.divTitle);
     }
 }

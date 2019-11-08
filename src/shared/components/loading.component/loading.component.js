@@ -7,10 +7,11 @@ export class LoadingComponent extends Components {
         this.text = text;
     }
     display(parent){
-        this.loadingComponent = super.createAppendElement(parent,"label");
+        this.divLoading = super.createAppendElement(parent, "wog-loading-component");
+        this.loadingComponent = super.createAppendElement(this.divLoading,"label");
         super.createTextAndAppendElement(this.loadingComponent, this.text);
     }
     hide(){
-        this.loadingComponent.parentNode.removeChild(this.loadingComponent);
+        this.divLoading.parentNode.removeChild(this.divLoading);
     }
 }

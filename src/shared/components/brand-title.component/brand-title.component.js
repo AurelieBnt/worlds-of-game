@@ -12,7 +12,7 @@ export class BrandTitleComponent extends Components {
     }
 
     display(parent){
-        this.divBrand = super.createAppendElement(parent, "brand-title-component");
+        this.divBrand = super.createAppendElement(parent, "wog-brand-title-component");
         const logo = super.createAppendElement(this.divBrand,"img");
         super.setAttribute(logo, {
             src: this.cheminImage,

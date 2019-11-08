@@ -10,7 +10,7 @@ export class RegisterButtonComponent extends Components {
     }
 
     display(parent) {
-        this.divRegisterButton = super.createAppendElement(parent, "register-button");
+        this.divRegisterButton = super.createAppendElement(parent, "wog-register-button");
         this.registerButton = new ButtonComponent("Register", "submit");
         this.registerButton.display(this.divRegisterButton);
         this.registerButton.button.addEventListener("click", (event) => Router.navigate("register"));

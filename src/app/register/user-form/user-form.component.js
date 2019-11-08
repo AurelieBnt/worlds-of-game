@@ -8,6 +8,7 @@ import { ButtonComponent } from "../../../shared/components/button.component/but
 import { AlertComponent } from "../../../shared/components/alert.component/alert.component";
 import { TitleComponent } from "../../../shared/components/title.component/title.component";
 import { Router } from "../../../shared/router.services/router.services";
+import { UserLocalService } from "../../../shared/services/user-local-services/user-local.services";
 
 export class UserFormComponent extends Components {
 
@@ -33,7 +34,7 @@ export class UserFormComponent extends Components {
     }
 
     display(div1) {
-        this.userForm = super.createAppendElement(div1, "user-form");
+        this.userForm = super.createAppendElement(div1, "wog-user-form");
         this.title = new TitleComponent(this.text);
         this.title.display(this.userForm);
         const form = super.createAppendElement(this.userForm, "form");
@@ -78,13 +79,11 @@ export class UserFormComponent extends Components {
                     this.postSuccess(data);
                     this.postEnd();
                 }
-                // (data)=>{console.log(data);}
             ).catch(
                 (xhr) => {
                     this.postError(xhr.status);
                     this.postEnd();
                 }
-                // (xhr)=>{console.log(xhr.status);}
             );
     }
 
@@ -96,6 +95,7 @@ export class UserFormComponent extends Components {
         this.saveButton.button.parentNode.removeChild(this.saveButton.button);
     }
     postSuccess(user) {
+        UserLocalService.store();
         Router.navigate("login");
     }
     postError(status) {
@@ -119,7 +119,6 @@ export class UserFormComponent extends Components {
     hide() {
         this.userForm.parentNode.removeChild(this.userForm);
     }
-
 }
 
     //for (const key in this.inputs){

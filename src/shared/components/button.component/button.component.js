@@ -9,12 +9,13 @@ export class ButtonComponent extends Components {
     }
 
     display(parent){
-        this.button = super.createAppendElement(parent, "button");
+        this.divButton = super.createAppendElement(parent, "wog-button-component");
+        this.button = super.createAppendElement(this.divButton, "button");
         super.createTextAndAppendElement(this.button, this.text);
         super.setAttribute(this.button, {type : this.type, id: this.text});
     }
     hide(){
-        this.button.parentNode.removeChild(this.button);
+        this.divButton.parentNode.removeChild(this.divButton);
     }
 
 }

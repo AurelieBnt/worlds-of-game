@@ -12,14 +12,15 @@ export class BackButtonComponent extends Components {
     }
 
     display(parent){
-        this.button = super.createAppendElement(parent, "button");
+        this.divBackButton = super.createAppendElement(parent, "wog-back-button");
+        this.button = super.createAppendElement(this.divBackButton, "button");
         super.createTextAndAppendElement(this.button, this.text);
         super.setAttribute(this.button, {type : this.type, id: this.text});
         this.button.addEventListener("click", (event) => {this.clickButton(event);})
     }
 
     hide(){
-        this.button.parentNode.removeChild(this.button);
+        this.divBackButton.parentNode.removeChild(this.divBackButton);
     }
 
     clickButton(){

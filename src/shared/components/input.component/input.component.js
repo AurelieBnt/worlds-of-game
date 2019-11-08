@@ -13,8 +13,9 @@ export class InputComponent extends Components{
     }
     
     display (parent) {
-    this.element = super.createAppendElement(parent, "input");    
-    super.setAttribute(this.element, {id : this.id, name : this.name, value : this.value, placeholder : this.placeholder, type : this.type});
+        this.divInput = super.createAppendElement(parent, "wog-input-component");
+        this.element = super.createAppendElement(this.divInput, "input");    
+        super.setAttribute(this.element, {id : this.id, name : this.name, value : this.value, placeholder : this.placeholder, type : this.type});
     }
 
 }

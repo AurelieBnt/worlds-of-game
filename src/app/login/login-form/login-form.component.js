@@ -6,6 +6,7 @@ import { UserService } from "../../../shared/services/user-services/user.service
 import { AlertComponent } from "../../../shared/components/alert.component/alert.component";
 import { LoadingComponent } from "../../../shared/components/loading.component/loading.component";
 import { Router } from "../../../shared/router.services/router.services";
+import { UserLocalService } from "../../../shared/services/user-local-services/user-local.services";
 
 
 export class LoginFormComponent extends Components {
@@ -16,19 +17,20 @@ export class LoginFormComponent extends Components {
         this.textNode = textNode;
         this.alert = new AlertComponent("");
         this.loadingComponent = new LoadingComponent("Loading");
+
     }
 
     display(parent) {
         
-        this.divLoginComponent = super.createAppendElement(parent, "login-form");
+        this.divLoginComponent = super.createAppendElement(parent, "wog-login-form");
         this.form = super.createAppendElement(this.divLoginComponent, "form");
         const divFormLogin = super.createAppendElement(this.form, "div");
         const divFormPassword = super.createAppendElement(this.form, "div");
 
-        this.loginInput = new InputComponent("loginInput", "loginInput", "", "email", "mail");
+        this.loginInput = (UserLocalService.load() != null) ? new InputComponent("loginInput", "loginInput", UserLocalService.load().email, "email", "mail") : new InputComponent("loginInput", "loginInput", "", "email", "mail");
         this.loginInput.display(divFormLogin);
 
-        this.passwordInput = new InputComponent("passwordInput", "passwordInput", "", "password", "password");
+        this.passwordInput = (UserLocalService.load() != null) ? new InputComponent("passwordInput", "passwordInput", UserLocalService.load().password, "password", "password") : new InputComponent("passwordInput", "passwordInput", "", "password", "password");
         this.passwordInput.display(divFormPassword);
 
         this.divGo = super.createAppendElement(this.form, "div");
@@ -36,7 +38,7 @@ export class LoginFormComponent extends Components {
         this.goButton.display(this.divGo);
         this.goButton.button.addEventListener("click", (event) => { this.clickButton(event); })
 
-        super.setAttribute(this.form, {class: "form"});
+        super.setAttribute(this.form, { class: "form" });
     }
 
     clickButton() {
@@ -71,7 +73,7 @@ export class LoginFormComponent extends Components {
     loginSuccess(user) {
         UserService.get().token = user.token;
         Router.navigate("home");
-    
+
     }
     loginError(status) {
         this.alert.text = 404 === status
@@ -90,7 +92,7 @@ export class LoginFormComponent extends Components {
 
     }
 
-    hide(){
+    hide() {
         this.divLoginComponent.parentNode.removeChild(this.divLoginComponent);
     }
 
