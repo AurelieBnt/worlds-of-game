@@ -13,6 +13,6 @@ export class User {
         this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
-    };
+    }
 
 }
