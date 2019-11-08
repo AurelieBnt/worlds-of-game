@@ -10035,13 +10035,6 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
-user-form .form {
-  width: 90px;
-  margin-right: 5px; }
-
-user-form button {
-  color: blueviolet; }
-
 login-form .form {
   font-family: "Goudy Bookletter 1911", sans-serif; }
 
@@ -10050,6 +10043,13 @@ login-form #loginInput {
 
 login-form #passwordInput {
   margin-bottom: 10px; }
+
+user-form .form {
+  width: 90px;
+  margin-right: 5px; }
+
+user-form button {
+  color: blueviolet; }
 
 body {
   background-color: rgba(230, 230, 230, 0.966);

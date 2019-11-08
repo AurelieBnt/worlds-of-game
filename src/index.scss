@@ -1,6 +1,17 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-@import "./src/app/register/user-form/user-form.scss";
-@import "./src/app/login/login.component.scss";
+@import "./app/login/login.component.scss";
+@import "./app/register/register.component.scss";
+@import "./app/home/home.component.scss";
+
+@import "./shared/components/alert.component/alert.component.scss";
+@import "./shared/components/back-button.component/back-button.component.scss";
+@import "./shared/components/brand-title.component/brand-title.component.scss";
+@import "./shared/components/button.component/button.component.scss";
+@import "./shared/components/input.component/input.component.scss";
+@import "./shared/components/label.component/label.component.scss";
+@import "./shared/components/loading.component/loading.component.scss";
+@import "./shared/components/super-class/super.component.scss";
+@import "./shared/components/title.component/title.component.scss";
 
 body {
 
