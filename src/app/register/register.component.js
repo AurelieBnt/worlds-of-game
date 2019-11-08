@@ -1,7 +1,5 @@
 import { Components } from "../../shared/components/super-class/super.component";
 import { UserFormComponent } from "./user-form/user-form.component";
-import { TitleComponent } from "../../shared/components/title.component/title.component";
-import { User } from "../../shared/models/user.model";
 import { BackButtonComponent } from "../../shared/components/back-button.component/back-button.component";
 
 export class RegisterComponent extends Components {

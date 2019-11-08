@@ -1,7 +1,6 @@
 import { Components } from "../../../shared/components/super-class/super.component";
 import { InputComponent } from "../../../shared/components/input.component/input.component";
 import { LabelComponent } from "../../../shared/components/label.component/label.component";
-import { User } from "../../../shared/models/user.model";
 import $ from "jquery";
 import { UserService } from "../../../shared/services/user-services/user.services";
 import { LoadingComponent } from "../../../shared/components/loading.component/loading.component";

@@ -1,13 +1,12 @@
 import { Components } from "../../../shared/components/super-class/super.component";
 import { InputComponent } from "../../../shared/components/input.component/input.component";
-import { Input } from "../../../shared/models/input.model";
 import { ButtonComponent } from "../../../shared/components/button.component/button.component";
 import $ from 'jquery';
 import { UserService } from "../../../shared/services/user-services/user.services";
 import { AlertComponent } from "../../../shared/components/alert.component/alert.component";
 import { LoadingComponent } from "../../../shared/components/loading.component/loading.component";
 import { Router } from "../../../shared/router.services/router.services";
-import { LoginComponent } from "../login.component";
+
 
 export class LoginFormComponent extends Components {
 
