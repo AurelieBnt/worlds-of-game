@@ -42,39 +42,39 @@ export class LoginFormComponent extends Components {
 
     clickButton() {
         event.preventDefault();
-        const user = UserService.retrieve();
+        const user = UserService.get();
         user.email = this.loginInput.element.value;
         user.password = this.passwordInput.element.value;
 
-        this.getStart();
-        UserService.get()
+        this.loginStart();
+        UserService.login()
             .then(
                 (data) => {
-                    this.getSuccess(data);
-                    this.getEnd();
+                    this.loginSuccess(data);
+                    this.loginEnd();
                 }
             )
             .catch(
                 (xhr) => {
-                    this.getError(xhr.status);
-                    this.getEnd();
+                    this.loginError(xhr.status);
+                    this.loginEnd();
                 }
             );
     }
 
-    getStart() {
-        console.log("Start");
+    loginStart() {
         if (this.alert.element && this.alert.element.parentNode) {
             this.alert.hide();
         }
         this.loadingComponent.display(this.goButton.button.parentNode);
         this.goButton.button.parentNode.removeChild(this.goButton.button);
     }
-    getSuccess(user) {
+    loginSuccess(user) {
+        UserService.get().token = user.token;
         Router.navigate("home");
     
     }
-    getError(status) {
+    loginError(status) {
         this.alert.text = 404 === status
             ? "User not found"
             : (412 === status
@@ -83,7 +83,7 @@ export class LoginFormComponent extends Components {
         this.alert.display(this.form)
     }
 
-    getEnd() {
+    loginEnd() {
         this.loadingComponent.hide();
         this.goButton = new ButtonComponent("Go", "submit");
         this.goButton.display(this.divGo);

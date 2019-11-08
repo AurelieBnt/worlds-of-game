@@ -65,7 +65,7 @@ export class UserFormComponent extends Components {
 
     clickButton(event) {
         event.preventDefault();
-        const user = UserService.retrieve();
+        const user = UserService.get();
         //this.user.gender = this.madameRadio.element.checked?this.madameRadio.element.value:this.monsieurRadio.element.value;
 
         for (const key in this.inputs) {

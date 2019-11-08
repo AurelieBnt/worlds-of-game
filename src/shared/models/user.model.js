@@ -2,7 +2,7 @@
 export class User {
 
 
-    constructor (email, password, surname,gender, firstName, lastName, phone, adress, city, zip) {
+    constructor (email, password, surname,gender, firstName, lastName, phone, adress, city, zip, token) {
         this.email = email;
         this.password = password;
         this.surname = surname; 
@@ -13,6 +13,7 @@ export class User {
         this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.token = token;
     }
 
 }

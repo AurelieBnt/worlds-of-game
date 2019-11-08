@@ -5,7 +5,7 @@ const user = new User;
 
 export class UserService {
 
-    static retrieve(){
+    static get(){
         return user;
     }
 
@@ -20,7 +20,7 @@ export class UserService {
         
     }
 
-    static get(){
+    static login(){
         return $.ajax({
             url : `http://worldsofgame.alwaysdata.net/user.php?email=${user.email}&password=${user.password}`,
             method : "GET",
