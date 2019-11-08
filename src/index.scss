@@ -1,4 +1,4 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/scss/bootstrap.scss";
 @import "./app/login/login.component.scss";
 @import "./app/register/register.component.scss";
 @import "./app/home/home.component.scss";
@@ -13,9 +13,8 @@
 @import "./shared/components/super-class/super.component.scss";
 @import "./shared/components/title.component/title.component.scss";
 
-body {
 
-    background-color: rgba(230, 230, 230, 0.966);
-    text-align: center;
+body{
 
+    background-image: "./assets/images/back.jpg";
 }
