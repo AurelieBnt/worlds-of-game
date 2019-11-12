@@ -3,9 +3,8 @@ import { TitleComponent } from "../title.component/title.component";
 
 export class BrandTitleComponent extends Components {
 
-    constructor(titleText, cheminImage, height) {
+    constructor(titleText, cheminImage) {
         super();
-        this.height = height;
         this.cheminImage = cheminImage;
         this.titleText = titleText;
         this.title = new TitleComponent(titleText); 
@@ -16,8 +15,7 @@ export class BrandTitleComponent extends Components {
         const logo = super.createAppendElement(this.divBrand,"img");
         super.setAttribute(logo, {
             src: this.cheminImage,
-            alt: "logo du site",
-            style: this.height
+            alt: "logo du site"
         }); 
         this.title.display(this.divBrand);
     }

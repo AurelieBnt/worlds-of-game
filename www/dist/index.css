@@ -324,12 +324,12 @@ h6, .h6 {
   font-size: 1.25rem;
   font-weight: 300; }
 
-.display-1, wog-title-component h1 {
+.display-1, wog-brand-title-component h1 {
   font-size: 6rem;
   font-weight: 300;
   line-height: 1.2; }
 
-.display-2, wog-home-component wog-title-component h1 {
+.display-2, wog-home-component wog-title-component h1, wog-title-component h1 {
   font-size: 5.5rem;
   font-weight: 300;
   line-height: 1.2; }
@@ -7063,7 +7063,6 @@ wog-user-form wog-div-button {
 wog-register-component {
   background-color: lightgray;
   display: block;
-  padding-bottom: 20px;
   padding-left: 10px; }
   wog-register-component wog-back-button {
     display: block;
@@ -7073,8 +7072,7 @@ wog-register-component {
 
 wog-home-component {
   background-color: lightgray;
-  display: block;
-  padding-bottom: 20px; }
+  display: block; }
   wog-home-component wog-div-propose {
     display: block;
     text-align: center; }
@@ -7102,14 +7100,19 @@ wog-back-button button {
   color: #3f3f3f;
   border-radius: 8px 0 8px 0;
   width: 200px;
-  height: 40px; }
+  height: 40px;
+  margin-bottom: 20px; }
 
 wog-brand-title-component img {
   margin-bottom: 10px;
+  padding-top: 10px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   display: block; }
+
+wog-brand-title-component h1 {
+  margin-bottom: 20px; }
 
 wog-button-component button {
   background-color: #3f3f3f;

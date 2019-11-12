@@ -11,7 +11,7 @@ export class LoginComponent extends Components {
 
     display() {
         this.divLogin = document.createElement("wog-login");
-        this.brandTitleComponent = new BrandTitleComponent("Worlds of Java", "assets/images/logoOfficiel.png", "height : 150px");
+        this.brandTitleComponent = new BrandTitleComponent("Worlds of Java", "assets/images/logoOfficiel.png");
         this.brandTitleComponent.display(this.divLogin);
         this.loginForm = new LoginFormComponent("Go", "www.google.fr");
         this.loginForm.display(this.divLogin)
