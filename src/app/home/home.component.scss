@@ -1,0 +1,38 @@
+wog-home-component{
+    background-color: lightgray;
+    display: block;
+    padding-bottom: 20px;
+
+    wog-div-propose{
+        display:block;
+        text-align: center;
+        button {
+            height:80px;
+            width:300px;
+            font-size: 40px;
+        }
+    }
+    wog-div-search{
+        display:block;
+        text-align: center;
+        button {
+            height:80px;
+            width:300px;
+            font-size: 40px;
+        }
+    }
+
+    wog-back-button {
+        display:block;
+        width:200px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    wog-title-component {
+        h1{
+        @extend .display-2;
+        margin-bottom: 20px;
+        }
+    }
+}

@@ -1,11 +1,25 @@
 
 wog-user-form {
+    form-gender {
+        @extend .row, .justify-content-center;
+        #Mr {
+            margin-right: 10px;
+        }
+    }
+    form {
+        @extend .row, .justify-content-center;
 
-    .form {
-       width: 90px; 
-       margin-right: 5px;
+        wog-user-form-div {
+            @extend .col-10, .col-md-6, .mt-4;
+        }
     }
-    button {
-        color: blueviolet;
+    wog-div-button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto; 
+        width:300px
     }
+   
+
+    
 }

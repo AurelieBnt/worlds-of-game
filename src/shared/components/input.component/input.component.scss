@@ -1,0 +1,7 @@
+wog-input-component {
+    @extend .d-block, .form-group;
+    margin-right: 10px;
+    input{
+        @extend .form-control;
+    }
+}

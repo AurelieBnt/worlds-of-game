@@ -1,7 +1,12 @@
 wog-button-component{
 
     button {
-        @extend .btn, .btn-info;
+        background-color: #3f3f3f;
+        color: #ff9000;
+        border-radius:8px;
+        height:40px;
+        width:150px;
+        margin-bottom : 10px;
     }
 
 }

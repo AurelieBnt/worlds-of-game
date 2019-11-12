@@ -34,7 +34,7 @@ export class LoginFormComponent extends Components {
         this.passwordInput.display(divFormPassword);
 
         this.divGo = super.createAppendElement(this.form, "div");
-        this.goButton = new ButtonComponent("go", "submit");
+        this.goButton = new ButtonComponent("Login", "submit");
         this.goButton.display(this.divGo);
         this.goButton.button.addEventListener("click", (event) => { this.clickButton(event); })
 

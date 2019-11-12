@@ -1,1 +1,15 @@
 @import "./user-form/user-form.component.scss";
+
+wog-register-component{
+    background-color: lightgray;
+    display: block;
+    padding-bottom: 20px;
+    padding-left: 10px;
+
+    wog-back-button {
+        display:block;
+        width:200px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

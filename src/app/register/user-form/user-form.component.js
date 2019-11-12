@@ -16,6 +16,8 @@ export class UserFormComponent extends Components {
         super();
         this.text = text;
         this.inputs = [
+            // this.monsieurRadio = new InputComponent("Mr", "gender", "", "", "radio"),
+            // this.madameRadio = new InputComponent("Mrs", "gender", "", "", "radio"),
             this.surname = new InputComponent("surname", "surname", "", "", "input"),
             this.firstName = new InputComponent("firstName", "firstName", "", "", "input"),
             this.lastName = new InputComponent("lastName", "lastName", "", "", "input"),
@@ -26,8 +28,8 @@ export class UserFormComponent extends Components {
             this.city = new InputComponent("city", "city", "", "", "input"),
             this.password = new InputComponent("password", "password", "", "", "password")
         ];
-        this.monsieurRadio = new InputComponent("mister", "gender", "Monsieur", null, "radio");
-        this.madameRadio = new InputComponent("miss", "gender", "madame", null, "radio");
+        this.monsieurRadio = new InputComponent("Mr", "gender", "", "", "radio");
+        this.madameRadio = new InputComponent("Mrs", "gender", "", "", "radio");
         this.alert = new AlertComponent("");
         this.loadingComponent = new LoadingComponent("Loading");
 
@@ -37,24 +39,26 @@ export class UserFormComponent extends Components {
         this.userForm = super.createAppendElement(div1, "wog-user-form");
         this.title = new TitleComponent(this.text);
         this.title.display(this.userForm);
-        const form = super.createAppendElement(this.userForm, "form");
-        const divGender = super.createAppendElement(form, "div");
+        const formGender = super.createAppendElement(this.userForm, "form-gender");
+        const divMonsieur = super.createAppendElement(formGender, "div")
         const labelComponentMonsieur = new LabelComponent("Mr");
-        labelComponentMonsieur.display(divGender);
-        this.monsieurRadio.display(divGender);
+        labelComponentMonsieur.display(divMonsieur);
+        this.monsieurRadio.display(divMonsieur);
+        const divMadame = super.createAppendElement(formGender, "div");
         const labelComponentMadame = new LabelComponent("Mrs");
-        labelComponentMadame.display(divGender);
-        this.madameRadio.display(divGender);
+        labelComponentMadame.display(divMadame);
+        this.madameRadio.display(divMadame);
+        const form = super.createAppendElement(this.userForm, "form");
 
         for (const key in this.inputs) {
-            const div = super.createAppendElement(form, "div");
-            const label = new LabelComponent(this.inputs[key].name);
+            const div = super.createAppendElement(form, "wog-user-form-div");
+            const label = new LabelComponent(this.inputs[key].id);
             label.display(div);
             this.inputs[key].display(div);
             super.setAttribute(label.element, { class: "form" });
         }
 
-        this.divButton = super.createAppendElement(form, "div");
+        this.divButton = super.createAppendElement(this.userForm, "wog-div-button");
         this.clearButton = new ButtonComponent("clear", "submit");
         this.clearButton.display(this.divButton);
         this.saveButton = new ButtonComponent("save", "submit");
