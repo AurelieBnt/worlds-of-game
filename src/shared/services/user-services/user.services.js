@@ -1,5 +1,5 @@
 import { User } from "../../models/user.model";
-import $ from 'jquery';
+import $ from "jquery";
 
 const user = new User;
 
@@ -16,7 +16,7 @@ export class UserService {
             contentType : "application/json",
             data : JSON.stringify(user),
             dataType : "json"
-        })
+        });
         
     }
 
@@ -25,6 +25,6 @@ export class UserService {
             url : `http://worldsofgame.alwaysdata.net/user.php?email=${user.email}&password=${user.password}`,
             method : "GET",
             contentType : "application/json"
-        })
+        });
     }
 }

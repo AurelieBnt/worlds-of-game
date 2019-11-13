@@ -4,7 +4,7 @@ import { Router } from "../../router.services/router.services";
 export class BackButtonComponent extends Components {
 
     constructor(text, type, name){
-        super()
+        super();
         this.text = text;
         this.type = type;
         this.name = name;
@@ -16,7 +16,7 @@ export class BackButtonComponent extends Components {
         this.button = super.createAppendElement(this.divBackButton, "button");
         super.createTextAndAppendElement(this.button, this.text);
         super.setAttribute(this.button, {type : this.type, id: this.text});
-        this.button.addEventListener("click", (event) => {this.clickButton(event);})
+        this.button.addEventListener("click", (event) => {this.clickButton(event);});
     }
 
     hide(){

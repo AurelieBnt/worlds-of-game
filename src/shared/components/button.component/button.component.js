@@ -3,7 +3,7 @@ import { Components } from "../super-class/super.component";
 export class ButtonComponent extends Components {
 
     constructor(text, type){
-        super()
+        super();
         this.text = text;
         this.type = type;
     }

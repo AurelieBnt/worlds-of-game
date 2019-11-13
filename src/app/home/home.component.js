@@ -7,13 +7,13 @@ import { BackButtonComponent } from "../../shared/components/back-button.compone
 export class HomeComponent extends Components{
 
     constructor(){
-        super()
+        super();
     }
 
     display(){
         const div1 = document.createElement("wog-home-component");
-        this.brandTitleComponent = new BrandTitleComponent("Welcome to Worlds of Java", "assets/images/logoOfficiel.png")
-        this.brandTitleComponent.display(div1)
+        this.brandTitleComponent = new BrandTitleComponent("Welcome to Worlds of Java", "assets/images/logoOfficiel.png");
+        this.brandTitleComponent.display(div1);
         this.title = new TitleComponent("Ready for a game party ?");
         this.title.display(div1);
         const divPropose = super.createAppendElement(div1, "wog-div-propose");

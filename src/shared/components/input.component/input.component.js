@@ -6,7 +6,7 @@ export class InputComponent extends Components{
         super(); 
         this.id = id;       
         this.name = name;
-        this.value = value
+        this.value = value;
         this.placeholder = placeholder;
         this.type = type;
         this.element = null;

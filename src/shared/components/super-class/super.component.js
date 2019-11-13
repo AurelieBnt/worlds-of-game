@@ -10,13 +10,13 @@ export class Components {
     }
 
     createAppendElement(parent, tagName){
-        const child = document.createElement(tagName)
+        const child = document.createElement(tagName);
         parent.appendChild(child);
         return child;
     }
 
     createTextAndAppendElement(parent, textNode){
-        const child = document.createTextNode(textNode)
+        const child = document.createTextNode(textNode);
         parent.appendChild(child);
         return child;
     }

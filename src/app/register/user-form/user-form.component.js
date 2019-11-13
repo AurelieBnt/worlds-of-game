@@ -40,7 +40,7 @@ export class UserFormComponent extends Components {
         this.title = new TitleComponent(this.text);
         this.title.display(this.userForm);
         const formGender = super.createAppendElement(this.userForm, "form-gender");
-        const divMonsieur = super.createAppendElement(formGender, "div")
+        const divMonsieur = super.createAppendElement(formGender, "div");
         const labelComponentMonsieur = new LabelComponent("Mr");
         labelComponentMonsieur.display(divMonsieur);
         this.monsieurRadio.display(divMonsieur);
@@ -63,7 +63,7 @@ export class UserFormComponent extends Components {
         this.clearButton.display(this.divButton);
         this.saveButton = new ButtonComponent("save", "submit");
         this.saveButton.display(this.divButton);
-        super.setAttribute(form, { method: "post", action: "" })
+        super.setAttribute(form, { method: "post", action: "" });
         this.saveButton.button.addEventListener("click", (event) => { this.clickButton(event); });
     }
 
@@ -103,7 +103,6 @@ export class UserFormComponent extends Components {
         Router.navigate("login");
     }
     postError(status) {
-        console.log("Error");
         this.alert.text = 409 === status
             ? "Account already exists"
             : (412 === status
@@ -113,7 +112,6 @@ export class UserFormComponent extends Components {
         this.alert.display(this.userForm);
     }
     postEnd() {
-        console.log("End");
         this.loadingComponent.hide();
         this.saveButton = new ButtonComponent("save", "submit");
         this.saveButton.display(this.divButton);

@@ -1,7 +1,7 @@
 import { Components } from "../../../shared/components/super-class/super.component";
 import { InputComponent } from "../../../shared/components/input.component/input.component";
 import { ButtonComponent } from "../../../shared/components/button.component/button.component";
-import $ from 'jquery';
+import $ from "jquery";
 import { UserService } from "../../../shared/services/user-services/user.services";
 import { AlertComponent } from "../../../shared/components/alert.component/alert.component";
 import { LoadingComponent } from "../../../shared/components/loading.component/loading.component";
@@ -81,14 +81,14 @@ export class LoginFormComponent extends Components {
             : (412 === status
                 ? "Missing email or password"
                 : "Unknow error");
-        this.alert.display(this.form)
+        this.alert.display(this.form);
     }
 
     loginEnd() {
         this.loadingComponent.hide();
         this.goButton = new ButtonComponent("Go", "submit");
         this.goButton.display(this.divGo);
-        this.goButton.button.addEventListener("click", (event) => { this.clickButton(event); })
+        this.goButton.button.addEventListener("click", (event) => { this.clickButton(event); });
 
     }
 

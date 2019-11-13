@@ -4,7 +4,7 @@ export class TitleComponent extends Components {
 
     constructor(titleText) {
         super();
-        this.titleText = titleText    
+        this.titleText = titleText; 
     }
 
     display(parent){
