@@ -193,7 +193,7 @@ npm install cordova
 
 *Creation a project*
 ```bash
-node_modules/.bin/cordova create MyApp
+./node_modules/.bin/cordova create MyApp
 ```
 *Installation Cordova in project MyApp*
 ```bash
@@ -203,12 +203,12 @@ npm install cordova
 
 *Android platform installation*
 ```bash
-node_modules/.bin/cordova platform add android
+./node_modules/.bin/cordova platform add android
 ```
 
 *Run application on device*
 ```bash
-node_modules/.bin/cordova run android --device
+./node_modules/.bin/cordova run android --device
 ```
 
 
